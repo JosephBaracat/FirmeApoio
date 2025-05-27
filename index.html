@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/contentsections.css">
+    <link rel="stylesheet" href="css/activitylist.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/responsividade.css">
 </head>
 <body>
     <div class="desktop-container">
@@ -184,6 +193,31 @@
                 </div>
             </section>
         </main>
+    </div>
+
+    <div class="login-modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="img/FirmeApoio.png" alt="FIRME APOIO" class="modal-logo">
+                <h2>Entrar no FIRME APOIO</h2>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>  
+                <button type="submit" class="login-button">Entrar</button>
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    <p>Não tem uma conta? <a href="#" class="register-link">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="script.js"></script>
