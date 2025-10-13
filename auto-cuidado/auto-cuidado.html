@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/sidebar.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Sidebar -->
+    <div class="desktop-container">
+        <!-- Sidebar Padronizada -->
         <aside class="sidebar">
             <div class="logo-container">
                 <img src="img/FirmeApoio.png" alt="FIRME APOIO" class="logo">
@@ -26,26 +26,45 @@
                             <span>Início</span>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="auto-cuidado.html">
-                            <i class="fas fa-heartbeat"></i>
-                            <span>Auto Cuidado</span>
-                        </a>
-                    </li>
+                    
                     <li>
                         <a href="#">
                             <i class="fas fa-book-open"></i>
                             <span>Conteúdo</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="auto-cuidado.html">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Auto Cuidado</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-message"></i>
+                            <span>Desabafo</span>
+                        </a>
+                    </li>
+
                     <li>
                         <a href="#">
                             <i class="fas fa-users"></i>
-                            <span>Comunidade</span>
+                            <span>Ajuda Externa</span>
                         </a>
                     </li>
+                    
                 </ul>
             </nav>
+
+            <div class="contraste">
+                <i class="fas fa-sun" style="padding-right:1vh;"></i>
+                <span style="margin-right: 1vh;">Alto Contraste</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
             
             <div class="user-section">
                 <div class="user-profile">
@@ -59,88 +78,52 @@
         </aside>
 
         <!-- Conteúdo Principal -->
-        <main class="app-main-content">
-            <div class="assessment-header">
-                <h1><i class="fas fa-heartbeat"></i> Avaliação de Bem-Estar</h1>
-                <p>Registre como você está se sentindo hoje</p>
-            </div>
-
-            <div class="emoji-container">
-                <h2>Como você está se sentindo hoje?</h2>
-                <div class="emoji-rating">
-                    <div class="emoji-option" data-value="1">
-                        <div class="emoji-circle" style="background-color: #ff6b6b;">
-                            <span>😭</span>
-                        </div>
-                        <p>Péssimo</p>
-                    </div>
-                    <div class="emoji-option" data-value="2">
-                        <div class="emoji-circle" style="background-color: #ff9e6b;">
-                            <span>😢</span>
-                        </div>
-                        <p>Triste</p>
-                    </div>
-                    <div class="emoji-option" data-value="3">
-                        <div class="emoji-circle" style="background-color: #ffcc6b;">
-                            <span>😐</span>
-                        </div>
-                        <p>Neutro</p>
-                    </div>
-                    <div class="emoji-option" data-value="4">
-                        <div class="emoji-circle" style="background-color: #8fce6b;">
-                            <span>🙂</span>
-                        </div>
-                        <p>Bem</p>
-                    </div>
-                    <div class="emoji-option" data-value="5">
-                        <div class="emoji-circle" style="background-color: #6bc4ce;">
-                            <span>😁</span>
-                        </div>
-                        <p>Ótimo</p>
-                    </div>
-                </div>
-            </div>
-
-            <form class="assessment-form" id="assessmentForm">
-                <!-- Pergunta 1 -->
-                <div class="form-card">
-                    <div class="question-header">
+        <main class="main-content">
+            <div class="container">
+                <h1>Como você está se sentindo hoje?</h1>
+                <h2>Poderia responder algumas perguntas?</h2>
+                
+                <div class="question-container">
+                    <div class="question-text">
                         <span class="question-number">1</span>
-                        <h3>O que aconteceu com você?</h3>
+                        O que aconteceu com você?
                     </div>
-                    <p class="question-hint">Fale sobre uma situação (positiva/negativa) que aconteceu.</p>
-                    <textarea placeholder="Descreva com suas palavras..." rows="4"></textarea>
+                    <div class="checkbox-container">
+                        <!-- <input type="checkbox" id="situation"> -->
+                        <label for="situation" class="checkbox-label">Fale sobre uma situação (positiva/negativa) que aconteceu.</label>
+                    </div>
+                    <textarea class="text-input" placeholder="Descreva a situação aqui..."></textarea>
                 </div>
-
-                <!-- Pergunta 2 -->
-                <div class="form-card">
-                    <div class="question-header">
+                
+                <div class="question-container">
+                    <div class="question-text">
                         <span class="question-number">2</span>
-                        <h3>O que você pensou ou sentiu sobre isso?</h3>
+                        O que você pensou ou sentiu sobre isso?
                     </div>
-                    <p class="question-hint">Digite como você agiu e se sentiu na hora da situação.</p>
-                    <textarea placeholder="Descreva seus sentimentos..." rows="4"></textarea>
+                    <div class="checkbox-container">
+                        <!-- <input type="checkbox" id="feelings"> -->
+                        <label for="feelings" class="checkbox-label">Digite como você agiu e se sentiu na hora da situação.</label>
+                    </div>
+                    <textarea class="text-input" placeholder="Descreva seus pensamentos e sentimentos aqui..."></textarea>
                 </div>
-
-                <!-- Pergunta 3 -->
-                <div class="form-card">
-                    <div class="question-header">
+                
+                <div class="question-container">
+                    <div class="question-text">
                         <span class="question-number">3</span>
-                        <h3>Como você lidou com esta situação?</h3>
+                        Como você lidou com esta situação?
                     </div>
-                    <p class="question-hint">Conte como você agiu durante ou após a situação.</p>
-                    <textarea placeholder="Descreva suas ações..." rows="4"></textarea>
+                    <div class="checkbox-container">
+                        <!-- <input type="checkbox" id="coping"> -->
+                        <label for="coping" class="checkbox-label">Conte como você agiu durante ou após a situação.</label>
+                    </div>
+                    <textarea class="text-input" placeholder="Descreva como você lidou com a situação aqui..."></textarea>
                 </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Avaliação
-                    </button>
-                </div>
-            </form>
+                
+                <button class="submit-btn">Enviar Respostas</button>
+            </div>
         </main>
     </div>
 
-    <script src="js/auto-cuidado.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
