@@ -60,7 +60,7 @@ body {
 
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* ALINHA PELA BASE */
     padding: 0 30px;
     margin-bottom: 40px;
 }
@@ -75,6 +75,7 @@ body {
     font-weight: 700;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2px; /* PEQUENO AJUSTE */
 }
 
 .main-nav ul {
@@ -183,42 +184,53 @@ body {
 }
 
 .contraste {
-    padding: 20px 30px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
-    margin-top: auto;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    margin: 20px;
+    justify-content: space-between; /* DISTRIBUIR ESPAÇO */
+    margin: 10px 20px 20px 20px;
+    /* background: rgba(43, 103, 140, 0.2); */
+    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.contraste-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contraste {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center; /* ISSO GARANTE ALINHAMENTO VERTICAL */
+    margin: 10px 20px 20px 20px;
+    /* background: rgba(43, 103, 140, 0.2); */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px; /* ESPAÇO CONSISTENTE ENTRE TODOS OS ELEMENTOS */
+}
+
 .contraste i {
-    font-size: 20px;
-    margin-right: 12px;
-    color: #ffffff; /* Ícone do contraste em branco */
+    font-size: 16px;
+    color: #34495e;
+    line-height: 1; /* REMOVER ALTURA EXTRA */
 }
 
 .contraste span {
-    margin-right: 15px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    color: #ffffff;
+    color: #34495e;
+    line-height: 1; /* REMOVER ALTURA EXTRA */
+    white-space: nowrap;
 }
 
-/* Switch button */
 .switch {
     position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    display: inline-flex; /* MUDAR PARA FLEX */
+    width: 45px;
+    height: 24px;
+    align-items: center; /* ALINHAR VERTICALMENTE */
 }
 
 .slider {
@@ -236,10 +248,10 @@ body {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
     background: rgba(255, 255, 255, 0.9);
     transition: .4s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
