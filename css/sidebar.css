@@ -1,8 +1,21 @@
-/* Sidebar Styles */
+/* ARQUITETURA PRINCIPAL (Sidebar + Conteúdo) */
+.desktop-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Define o espaço que a sidebar ocupa e seu comportamento flex */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* SIDEBAR E SEUS COMPONENTES */
 .sidebar {
     width: var(--sidebar-width);
-    background: var(--white);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    background: var(--gradient-sidebar);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     padding: 30px 0;
@@ -10,37 +23,27 @@
     height: 100vh;
     z-index: 100;
     transition: all 0.3s ease;
-}
-
-.desktop-container {
-    display: flex;
-    min-height: 100vh;
-}
-
-.main-content {
-    margin-left: var(--sidebar-width);
-    flex: 1;
-    padding: 30px 40px;
-    background-color: var(--light);
-    min-height: 100vh;
+    flex-shrink: 0; /* IMPEDIR QUE ENCOLHA */
 }
 
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* ALINHA PELA BASE */
     padding: 0 30px;
     margin-bottom: 40px;
 }
 
 .logo-container .logo {
-    width: 40px;
+    width: 45px;
     margin-right: 15px;
 }
 
 .logo-container h1 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--dark);
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2px; /* PEQUENO AJUSTE */
 }
 
 .main-nav ul {
@@ -51,12 +54,14 @@
 .main-nav li a {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-decoration: none;
-    color: var(--text);
-    border-radius: 8px;
+    color: #ffffff;
+    border-radius: 12px;
     transition: all 0.3s ease;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
 }
 
 .main-nav li a i {
@@ -64,25 +69,54 @@
     margin-right: 15px;
     width: 20px;
     text-align: center;
+    transition: all 0.3s ease;
+    color: #3A848C; /* Ícones na mesma cor da fonte */
 }
 
 .main-nav li a:hover {
-    background-color: var(--light-gray);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(8px) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #3A848C;
 }
 
+.main-nav li a:hover i {
+    color: #3A848C; /* Ícones permanecem brancos no hover */
+    transform: scale(1.1);
+} 
+
+/* BOTÃO ATIVO - SEM FILTRO BRANCO */
 .main-nav li.active a {
-    background: var(--gradient);
-    color: var(--white);
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a3c52;
+    border-color: #2B678C;
+    box-shadow: 0 4px 20px rgba(43, 103, 140, 0.4);
+    transform: translateX(5px);
+    font-weight: 700;
+}
+
+.main-nav li.active a::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-buttons);
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0.8;
 }
 
 .main-nav li.active a i {
-    color: var(--white);
+    color: #2B678C; /* Ícones brancos no botão ativo */
 }
 
 .user-section {
     margin-top: auto;
     padding: 20px 30px;
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .user-profile {
@@ -91,11 +125,13 @@
 }
 
 .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .user-info {
@@ -104,88 +140,171 @@
 }
 
 .user-name {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
+    color: #000000;
 }
 
 .user-status {
     font-size: 12px;
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
 }
 
-.contraste{
-    position: sticky;
-    align-content: flex-end;
-    margin-bottom: 2vh;
-    flex-direction: column;
-    height: 100vh;  
-    margin-left: 6vh;
+.contraste {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* DISTRIBUIR ESPAÇO */
+    margin: 10px 20px 20px 20px;
+    /* background: rgba(43, 103, 140, 0.2); */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px; /* ESPAÇO CONSISTENTE ENTRE TODOS OS ELEMENTOS */
 }
 
-.contraste i{
-    font-size: 23px;
+.contraste-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* switch button */
+.contraste i {
+    font-size: 16px;
+    color: #34495e;
+    line-height: 1; /* REMOVER ALTURA EXTRA */
+}
+
+.contraste span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #34495e;
+    line-height: 1; /* REMOVER ALTURA EXTRA */
+    white-space: nowrap;
+}
 
 .switch {
     position: relative;
-    display: inline-block;
-    width: 9vh;
-    height: 4vh;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+    display: inline-flex; /* MUDAR PARA FLEX */
+    width: 45px;
+    height: 24px;
+    align-items: center; /* ALINHAR VERTICALMENTE */
+}
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
+    background: rgba(255, 255, 255, 0.2);
     transition: .4s;
-  }
-  
-  .slider:before {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slider:before {
     position: absolute;
     content: "";
-    height: 3vh;
-    width: 3vh;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background: rgba(255, 255, 255, 0.9);
     transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+    background: var(--gradient-buttons);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+input:checked + .slider:before {
     transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+    background: white;
+}
+
+.slider.round {
     border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
+}
+
+/* RESPONSIVIDADE DA ARQUITETURA E SIDEBAR */
+@media (max-width: 768px) {
+    .desktop-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: relative;
+        background: var(--gradient-main);
+        padding: 20px 0;
+        height: auto; /* ALTURA AUTOMÁTICA */
+        min-height: auto;
+        overflow: visible; /* SEM CORTE */
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .logo-container {
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+    
+    .main-nav li a {
+        padding: 12px 16px;
+        margin-bottom: 5px;
+    }
+    
+    .contraste {
+        margin: 15px;
+        padding: 15px 20px;
+    }
+    
+    .user-section {
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* GARANTIR QUE TODOS OS ELEMENTOS FICAM VISÍVEIS */
+    .sidebar > * {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .contraste {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .main-nav li a {
+        padding: 10px 14px;
+    }
+    
+    .logo-container {
+        padding: 0 15px;
+    }
+    
+    .user-section {
+        padding: 12px 15px;
+    }
+    
+    .contraste {
+        margin: 10px 15px;
+        padding: 12px 15px;
+    }
+}

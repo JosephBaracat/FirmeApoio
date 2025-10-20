@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRME APOIO - Suporte em Recuperação</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/contentsections.css">
+    <link rel="stylesheet" href="css/activitylist.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/responsividade.css">
+</head>
+
+<body>
+        <?php include 'sidebar.php'; ?>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Como Podemos Ajudar Você Hoje?</h2>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Pesquisar...">
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-cards">
+                <!-- Card 1 -->
+                <div class="dashboard-card gradient-bg">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Auto Cuidado</h3>
+                    <p>Recursos para seu bem-estar diário</p>
+                    <button class="card-button">Acessar</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="dashboard-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Desabafo</h3>
+                    <p>Compartilhe o que está sentindo</p>
+                    <button class="card-button">Abrir</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="dashboard-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Ajuda Externa</h3>
+                    <p>Profissionais disponíveis</p>
+                    <button class="card-button">Contatar</button>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h3>Seu Progresso</h3>
+                    <a href="#" class="see-all">Ver tudo</a>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-card">
+                        <div class="progress-circle" data-progress="75">
+                            <svg>
+                                <circle class="progress-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="progress-text">75%</div>
+                        </div>
+                        <h4>Dias Sóbrios</h4>
+                        <p>15 de 20 dias</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-circle" data-progress="60">
+                            <svg>
+                                <circle class="progress-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="progress-text">60%</div>
+                        </div>
+                        <h4>Metas Alcançadas</h4>
+                        <p>3 de 5 metas</p>
+                    </div>
+                    
+                    <div class="progress-card">
+                        <div class="progress-circle" data-progress="90">
+                            <svg>
+                                <circle class="progress-bg" cx="50" cy="50" r="40"></circle>
+                                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="progress-text">90%</div>
+                        </div>
+                        <h4>Atividades Completas</h4>
+                        <p>9 de 10 atividades</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <div class="section-header">
+                    <h3>Atividade Recente</h3>
+                    <a href="#" class="see-all">Ver tudo</a>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Você completou a atividade "Exercícios de Respiração"</p>
+                            <span class="activity-time">2 horas atrás</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Novo membro na comunidade: Maria Oliveira</p>
+                            <span class="activity-time">5 horas atrás</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Novo conteúdo disponível: "Lidando com a Ansiedade"</p>
+                            <span class="activity-time">Ontem</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="login-modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="img/FirmeApoio.png" alt="FIRME APOIO" class="modal-logo">
+                <h2>Entrar no FIRME APOIO</h2>
+            </div>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>  
+                <button type="submit" class="login-button">Entrar</button>
+                <div class="form-footer">
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    <p>Não tem uma conta? <a href="#" class="register-link">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
