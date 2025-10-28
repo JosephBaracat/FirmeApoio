@@ -220,3 +220,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar efeito de digitação após um breve delay
     setTimeout(typeWriter, 500);
 });
+
+// Adicione ao script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButtons = document.querySelectorAll('.menu-btn');
+    
+    menuButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Remove active class de todos os botões
+            menuButtons.forEach(btn => btn.classList.remove('active'));
+            // Adiciona active class no botão clicado
+            this.classList.add('active');
+            
+            // Aqui você pode adicionar lógica para carregar o conteúdo dinamicamente
+            // ou redirecionar para outra página
+        });
+    });
+});
